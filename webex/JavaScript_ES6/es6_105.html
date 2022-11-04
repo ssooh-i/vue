@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // args에 1,2,3,4,5가 한꺼번에 배열로 담겨 인자로 넘겨진다.
+    function func1(...args) {
+      console.log(`args: [${args}]`)
+        // args: [1,2,3,4,5]
+    }
+    func1(1,2,3,4,5);
+    // arg1에는 1, arg2에는 2, arg3에는 나머지 3,4,5가 배열로 담겨 인자로 넘겨진다.
+    function func2(arg1, arg2, ...arg3) {
+        console.log(`arg1: ${arg1}, arg2: ${arg2}, arg3: [${arg3}]`)
+      // arg1: 1, arg2: 2, arg3: [3,4,5]
+    }
+    func2(1,2,3,4,5);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

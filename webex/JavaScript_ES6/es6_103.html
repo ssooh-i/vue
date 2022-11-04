@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. class(클래스)</title>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        nextYearAge() {
+          // 메서드 생성
+          return Number(this.age) + 1;
+        }
+      }
+
+      // 클래스 상속
+      class introducePerson extends Person {
+        constructor(name, age, city, futureHope) {
+          // super 키워드를 이용해서 자식 class에서 부모 메서드를 호출
+          super(name, age);
+          this.city = city;
+          this.futureHope = futureHope;
+        }
+        introduce() {
+          return `저는 ${this.city}에 사는 ${this.name} 입니다.
+        내년엔 ${super.nextYearAge()}살이며,
+        장래희망은 ${this.futureHope} 입니다.`;
+        }
+      }
+
+      let kim = new introducePerson('kim', '23', 'seoul', '개발자');
+      console.log(kim.introduce());
+    </script>
+  </head>
+  <body></body>
+</html>
