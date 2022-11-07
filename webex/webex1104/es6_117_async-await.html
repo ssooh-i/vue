@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        참조 주소 
+        https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function
+        async 는 항상 Promise 객체를 반환
+        await가 없다면 항상 동기적 실행
+      */
+      async function func01() {
+        return 1;
+      }
+      console.log("func01 call");
+      console.dir(func01());
+
+      function func02() {
+        return new Promise((resolve) => resolve(1));
+      }
+      console.log("func02 call");
+      console.dir(func02());
+
+      async function func03(msg) {
+        return msg + " function";
+      }
+      func03("async").then((msg) => console.log(msg));
+    </script>
+  </body>
+</html>

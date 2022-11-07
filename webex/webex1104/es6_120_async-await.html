@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        참조 주소 
+        https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function
+        async 는 항상 Promise 객체를 반환
+        await가 있다면 비동기적 실행
+      */
+      function axios(url, payload) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(payload.msg);
+          }, payload.time);
+        });
+      }
+
+      async function callAxios() {
+        // 비동기 실행
+        axios('http://localhost:8000/board', {
+          msg: '등록1',
+          time: 2000,
+        }).then((data) => console.log(`await 1 : ${data}`));
+        console.log('비동기 처리 - 등록 후');
+
+        let data = await axios('http://localhost:8000/board', {
+          msg: '등록2',
+          time: 1000,
+        });
+        console.log(`await 2 : ${data}`);
+      }
+
+      console.log('callAxios 호출 전');
+      callAxios();
+      console.log('callAxios 호출 후');
+    </script>
+  </body>
+</html>

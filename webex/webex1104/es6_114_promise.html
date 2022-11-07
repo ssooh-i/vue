@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function axios(url, options) {
+        return new Promise((resolve, reject) => {
+          console.log(
+            `${url} ${options.method} 방식으로 호출함, ${options.data.writer} ${options.data.title}`
+          );
+          setTimeout(() => {
+            resolve("데이터 입력 성공");
+            // reject('데이터 입력시 에러발생');
+          }, 3000);
+        });
+      }
+
+      axios("http://localhost:8000/board", {
+        method: "post",
+        data: {
+          // writer: this.writer,
+          // title: this.title,
+          // content: this.content,
+
+          writer: "메롱",
+          title: "이주찬 바보",
+          content: this.content,
+        },
+      })
+        .then((data) => {
+          console.log("결과1:" + data);
+        })
+        .catch((data) => {
+          console.log("결과2:" + data);
+        });
+    </script>
+  </body>
+</html>
