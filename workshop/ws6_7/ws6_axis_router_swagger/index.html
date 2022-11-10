@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header-nav></header-nav>
+      <router-view></router-view>
+    </div>
+
+    <script type="module">
+      //뷰 인스턴스 생성객체에는 router속성이 있다.
+      //뷰 라우터를 사용하려면 이속성으로 뷰 라우터객체를 넘겨줘야 한다.
+      import router from "./App.js";
+      import HeaderNav from "./components/HeaderNav.js";
+
+      new Vue({
+        el: "#app",
+        router,
+        components: {
+          HeaderNav,
+        },
+      });
+    </script>
+  </body>
+</html>

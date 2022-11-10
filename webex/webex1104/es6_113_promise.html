@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* axios 함수는 Promise 객체를 넘긴다. */
+      function axios(url) {
+        return new Promise((resolve, reject) => {
+          console.log(url + " 호출함");
+          setTimeout(() => {
+            resolve("처리결과 성공");
+            reject("처리결과 에러");
+          }, 3000);
+        });
+      }
+
+      axios("http://localhost:8000/board")
+        .then((data) => {
+          console.log("결과1:" + data);
+        })
+        .catch((data) => {
+          console.log("결과2:" + data);
+        })
+        .finally(() => {
+          // 최종 실행할 내용이 있다면 사용한다.
+          console.log("마지막 항상 실행");
+        });
+    </script>
+  </body>
+</html>

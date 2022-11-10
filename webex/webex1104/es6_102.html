@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. arrow function / this</title>
+    <script>
+      // 기본 함수 형식
+      let sum1 = function (a, b) {
+        return a + b;
+      };
+      // 화살표 함수 형식
+      let sum2 = (a, b) => a + b;
+
+ //    console.log(sum1(10, 20));
+ //    console.log(sum2(5, 4));
+
+      //문제---------------------------------------------------
+      //아래 코드를 수정해서 최대값과 최솟값이 나오도록 하시오
+      // 40
+      // 10
+      let a = 30;
+      let b = 40;
+
+      function test2() {
+        this.a = 10;
+        this.b = 20;
+
+        //수정하시오(화살표 함수)
+        let max = () => (a>b)?a:b;
+        console.log(max());
+
+        //수정하시오(일반 함수)
+        let min=function(){
+          return (this.a < this.b)? this.a:this.b;
+        }
+        console.log(min());
+      }
+      test2();
+      console.log(a)
+    </script>
+  </head>
+  <body></body>
+</html>

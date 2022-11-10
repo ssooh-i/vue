@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. destructuring , rest</title>
+    <script>
+      function test1() {
+        const introduce = { name: 'candy', age:3};
+
+        // key와 같은 이름으로 변수 선언
+        const { name, age } = introduce;
+
+        // 다른 이름으로 변수 선언 -> 변수이름: 키값
+        const { name: myName, age: myAge } = introduce;
+        console.log(myName); // unico
+        console.log(myAge); // 23
+
+        //배열에서 값을 꺼낼 때는 대괄호를 사용해서 앞에서부터 순차적으로 꺼내올 수 있다.
+        const fruits = ['apple', 'mango', 'grape'];
+
+        // 앞에서부터 순차적으로 변수 선언 가능
+        const [zero, one, two] = fruits;
+        console.log(zero); // apple
+      }
+      //test1();
+      //문제-----------------------------------------------------
+      //다음과 같은 출력 결과가 나오도록 데이터를 추가하시오
+      // 10
+      // 20
+      // 30
+      function test2() {
+        //10, 20, 30 데이터를 추가하시오
+        let {a,b,c} ={a:10, b:20, c:30};
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      test2();
+    </script>
+  </head>
+  <body></body>
+</html>

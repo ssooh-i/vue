@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ES6 부터 제공됨
+      console.dir(Promise);
+    </script>
+  </body>
+</html>
+<!--
+1. 동기와 비동기
+1) 동기식 처리란?
+- 코드가 작성된 순서대로 실행되는 것
+2) 비동기식 처리란?
+- 코드가 작성된 순서와는 상관없이 지정된 순서에 의해 실행되는 것 
+-------------------------------------------------------------------------
+2. 대표적인 비동기식 처리방법 
+1) callback
+- 재귀함수와 같은 형태로, 하나의 함수 안에서 다른 함수를 호출하는 방식으로 실행 순서를 부여한다. 
+- 호출하는 함수가 많아질수록 코드의 의존성이 올라가며, 가독성과 효율성이 떨어진다.
+- 그러므로 하나의 함수가 수정되면 전체 코드에 영향을 미치게 되어 유지보수가 힘들다. 
+2) promise
+- promise 객체를 사용하여 비동기를 구현하는 방법이다. 
+- 참조 주소
+  https://developer.mozilla.org/ko/docs/Web/JavaScript/reference/Global_Objects/Promise
+-------------------------------------------------------------------------
+3. Promise 객체
+1) Promise 메서드와 키워드
+- promise 객체를 부여받은 메소드는 내부에는 resolve() 메소드를 부여한다.
+- resolve()가 실행되기 전까지 다른 메소드는 실행될 수 없다.
+- promise 객체와 resolve를 할당받은 메소드만이 async와 await 키워드를 사용할 수 있다.
+- await 키워드를 할당받은 메소드는 promise 내부에서 resolve()가 실행될 때까지 우선적으로 실행된다. 
+2) promise의 동작상태 
+- pending(대기): promise의 초기상태 
+- fulfilled(이행): promise 내부 연산 완료 → resolve() 실행
+- rejected(거부): promise 내부 연산 실패 → 예외처리 
+3) resolve()
+- resolve()가 실행되면 promise는 fulfilled 상태가 된다. 즉, 연산이 완료됨을 의미한다. 
+- resolve()에 매개변수를 할당하여 데이터를 넘겨줄 수 있다. 
+4) promise의 예외처리 
+- 기본적으로 promise의 예외처리는 try, catch를 사용한다. 
+-------------------------------------------------------------------------
+4. async, await 를 사용할 수 없는 경우
+1) 개발환경의 차이 
+- 자바스크립트의 버전에 따라서 async와 await를 사용할 수 없는 환경일 수도 있다. 
+- promise → ES6 (2015)
+- async, await → ES8 (2017)
+
+2) async, await 없이 promise 비동기처리 하기
+- then(): resolve()가 실행되고 난 뒤 동작할 코드 → fulfilled 상태에서 실행
+- catch(): 에러 또는 연산 실패 → rejected 상태에서 실행
+- finally(): promise의 결과에 상관없이 promise실행 후 무조건 동작할 코드 
+- 따라서, resolve()는 then()과 함께 사용되고 reject()는 catch()와 함께 사용된다
+- resolve() & then() → 연산이 완료된 상태
+- reject() & catch() → 연산이 실패한 상태
+-------------------------------------------------------------------------
+5. async와 await를 사용하는 이유
+[참조사이트]
+https://devraphy.tistory.com/229?category=997625
+-->

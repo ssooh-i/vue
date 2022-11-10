@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="module">
+    // export default 는 중복되면 안된다.
+    import ob, { mul } from './es6_123_module.js';
+    console.log(ob.title);
+    console.log(ob.add(20, 10));
+    console.log(ob.sub(20, 10));
+    console.log(mul(20, 10));
+  </script>
+</body>
+
+</html>
