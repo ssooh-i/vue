@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.forEach</title>
+    <script>
+      const data = [1, 10, 100];
+      console.log('[for]');
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+      }
+
+      console.log('[for~in] 객체의 키를 반환');
+      for (let key in data) {
+        console.log(key + ':' + data[key]);
+      }
+
+      console.log('[forEach]');
+      data.forEach(function (element) {
+        console.log(element);
+      });
+
+      console.log('[for~of] 객체의 값을 반환');
+      for (let key of data.keys()) {
+        console.log(key);
+      }
+
+      for (let element of data) {
+        console.log(element);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

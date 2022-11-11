@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.template string</title>
+    <script>
+      function test1() {
+        var js = '자바스크립트';
+
+        // 기존 코드
+        console.log('이건 ' + js + '입니다.');
+
+        // 템플릿 리터럴 방식
+        console.log(`이건 ${js}입니다.`);
+      }
+      //test1();
+      //-----------------------------------------------------------------------------------
+      function test3(){
+        const id="andong", name="안동", age=3;
+        const user={
+            id,         //id:id,
+            name,       //name:name,
+            age         //age:age
+        }
+        console.log(user);
+      }
+      //test3();
+      //------------------------------------------------------------------------
+      //비구조화 할당
+      function test4(){
+        const user={
+          id:"abcd",
+          name:"가나다",
+          age:23
+        };
+
+        //기존 방식
+        // let id=user.id;
+        // let name=user.name;
+        // let age=user.age;
+        // console.log(id,name,age);
+
+        //비구조화된 방식
+        // let {id,name,age} =user;
+        // console.log(id,name,age);
+
+        let {id:userid, name:username, age:userage}=user;
+        console.log(userid,username,userage);
+      }
+      test4();
+      //문제-------------------------------------------------------------------------------
+      // 아래와 같이 출력되도록 코드를 완성하시오.
+      // 아이디 : IronMan , 비밀번호 : 1234 , 이름 : 토니 스타크 , 이메일 : ironman@ssafy.com , 나이 : 53
+      function test2() {
+        const user = {
+          id: "IronMan",
+          password: "1234",
+          name: "토니 스타크",
+          email: "ironman@ssafy.com",
+          age: 53
+        }
+
+        let {id, password, name, email, age} = user;
+        let userString=`아이디 : ${id} , 비밀번호 : ${password} , 이름 : ${name} , 이메일 : ${email} , 나이 : ${age}`;
+        console.log(userString);
+      }
+      test2();
+    </script>
+  </head>
+  <body></body>
+</html>

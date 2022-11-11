@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. const / let</title>
+    <script>
+      //변수 선언문 이전에 변수를 참조하면 undefined(호이스팅 발생)
+      //호이스팅(Hoisting): 자바스크립트 및 액션스크립트 코드를 인터프리터가 로드할 때,
+      //변수의 정의가 그 범위에 따라 선언과 할당으로 분리되어 변수의 선언을
+      //항상 컨텍스트 내의 최상위로 끌어올리는 것을 의미한다.
+      function test1() {
+        //console.log(x);
+
+        //변수선언
+        let x = 2;
+        console.log(x);
+
+        //재정의
+        x = 4;
+        console.log(x);
+
+        //재선언
+        let y = 10;
+        console.log(y);
+
+        const z=50;
+        console.log(z);
+
+        z=100;
+      }
+      //test1();
+      //---------------------------------------------------------
+      //해결: let
+      function test3(){
+        let j=10;
+        for(let j=1; j<=5; j++){
+          console.log(j);
+        }
+        console.log("j=" + j);
+      }
+      test3();
+
+      //---------------------------------------------------------
+      const data = [1, 10, 100];
+      console.log('for');
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+      }
+
+      console.log('for~in : 객체의 키를 반환');
+      for (let key in data) {
+        console.log(key + ':' + data[key]);
+      }
+
+      console.log('forEach');
+      data.forEach(function (element) {
+        console.log(element);
+      });
+
+      console.log('for~of: 객체의 값을 반환');
+      for (let key of data.keys()) {
+        console.log(key);
+      }
+
+      for (let element of data) {
+        console.log(element);
+      }
+
+      //문제-----------------------------------------------------
+      //다음과 같이 출력하게 수정하시오
+      // I am const
+      // I am let
+
+      function test2() {
+        // ① 호이스팅이 일어나지 않는 변수로 만드시오
+        let x = 'let';
+        {
+        // ② 값을 변경하지 못하는 변수로 만드시오
+          let x = 'const';
+          // x 출력
+          if (x === 'const') {
+            console.log('I am ' + x);
+          }
+
+          x = "changed";
+        }
+        // x 출력
+        if (x === 'let') {
+          console.log('I am ' + x);
+        }
+      }
+      test2();
+    </script>
+  </head>
+  <body></body>
+</html>

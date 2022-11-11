@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-model="a" />
+    </div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        a: 1,
+      },
+      watch: { // 감시자
+        a: function (val, oldVal) { // a를 감시하다가 변화가 생기면(val = 바뀐값, oldVal = 원래(이전)값)으로 받아 함수 실행
+          console.log('new: %s, old: %s', val, oldVal);
+        },
+        // computed : 종속된 data만 변경
+      },
+    });
+    console.log(vm.a);
+    vm.a = 2; // => new: 2, old: 1
+    console.log(vm.a);
+  </script>
+</body>
+
+</html>

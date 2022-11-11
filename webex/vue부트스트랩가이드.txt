@@ -1,0 +1,17 @@
+※ Vue에서 Bootstrap을 사용하기 위한 방법
+https://bootstrap-vue.org
+https://bootstrap-vue.org/docs
+------------------------------------------------------
+https://imasoftwareengineer.tistory.com/42
+https://codesandbox.io/examples/package/bootstrap-vue
+
+1.C:\>vue create vue-bootstrap
+    Maually select features(선택) -> Router(*) -> 2.x -> (Y/n) Y
+    -> ESLint with error prevention only(선택) -> Lint on save(선택)
+    -> (y/N) y -> In dedicated config files  -> Save this as a preset for future projects? (y/N): N
+
+2.프로젝트에 사용될 bootstrap을 설치
+   $ npm install vue bootstrap-vue bootstrap
+
+3.axios 설치
+   $ npm install axios

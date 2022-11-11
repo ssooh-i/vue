@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="view1" class="view">{{ msg }}</div>
+        <div id="view2" class="view">{{ msg }}</div>
+        <div id="view3" class="view">{{ count }}</div>
+        <!-- <button v-on:click="count++">클릭</button> -->
+        <button @click="count++">클릭</button>
+    </div>
+    <div id="view4" class="view">{{ msg }}</div>
+    <script>
+        // document.querySelector("#view1").textContent = '안녕 뷰 js';
+        // document.querySelector("#view2").textContent = '안녕 뷰 js';
+        // document.querySelector("#view3").textContent = '안녕 뷰 js';
+        // document.querySelectorAll(".view").forEach(function(el) {
+        //     el.innerHTML = 'hello vue';
+        // })
+
+        // 생성자 함수
+        // function Test(a, b) {
+        //     this.a = a;
+        //     this.b = b;
+        // }
+        // let a1 = new Test(10, 20);
+
+
+        let app = new Vue({
+            el: '#app', // view : Vue가 적용될 요소 지정. CSS Selector or HTML Element. 어떤 DOM 을 관리할 거냐(이 요소 안에서만 적용됨)
+            // data: { // Model : data 를 담아둔다. 사용되는 정보를 저장
+            //     msg: 'Hello Vuejs ssafy',
+            //     count: 0,
+            // },
+            // template // 화면에 표시할 HTML, CSS 등의 마크업 요소를 정의하는 속성. 뷰의 데이터 및 기타 소성들도 함께 화면에 그릴 수 있다.
+            // methods // 화면 로직 제어와 관계된 method를 정의하는 속성. 마우스 클릭 이벤트 처리와 같이 화면의 ... 로직을 추가
+            // created // 시작되자마자 ...
+            data() {
+                return {
+                    msg: 'Hello Vuejs ssafy',
+                    count: 0,
+                }
+            },
+        });
+        console.log(app);
+
+    </script>
+</body>
+</html>

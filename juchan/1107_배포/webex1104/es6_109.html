@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.Math</title>
+    <script>
+      function test() {
+        // 정수인가?
+        console.log(Number.isInteger('imInteger'));
+        // Number 타입이면서 NaN인가?
+        console.log(Number.isNaN(NaN));
+
+        // 최소값
+        console.log(Math.min(40, 50, 60));
+        // 2의 3승
+        console.log(Math.pow(2, 3));
+        // 1 - 100 의 절대값
+        console.log(Math.abs(1 - 100));
+
+        // 문자열이 다음 문자열을 포함하는가?
+        console.log('abcde'.includes('abc'));
+        // 문자열 3번 반복하여 출력
+        console.log('abc'.repeat(3));
+      }
+      test();
+    </script>
+  </head>
+  <body></body>
+</html>

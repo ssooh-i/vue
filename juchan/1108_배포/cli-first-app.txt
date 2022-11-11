@@ -1,0 +1,26 @@
+1. Node.js 설치가 되어 있어야 함(nodejs.org)
+
+2. C:\SSAFY_8\workspace\9_vue\webex1108>vue create cli-first-app   <--- 콘솔, (경로확인할것)
+    Maually select features(선택) -> Router(*) -> 2.x -> (Y/n) Y
+    -> ESLint + Prettier(선택) -> Lint on save(선택)
+    -> (y/N) y -> In dedicated config files  -> Save preset as: mypreset -> enter(또는 N)
+
+3. VSCode에서 
+     메뉴 -> Terminal -> new Terminal열고 'v' 표시를 눌러서 command prompt선택(또는 cmd 창)
+   C:\SSAFY_8\workspace\9_vue\webex1108\cli-first-app>npm run serve
+   - Local:   http://localhost:8080/   <--- ctrl + 클릭
+============================================================================================
+[prettier 오류 해결 / 방법1]
+① .eslintrc.js에서 추가
+   rules: {
+	"prettier/prettier": ["error", { endOfLine: "auto" }],
+   }
+
+② ctrl + , : print width => 80
+              Tabs size ==> 2
+
+③ 우측하단: CRLF를 눌러 LF로 교체
+ 
+④ 오른쪽 버튼 -> Format Document with... -> prettier
+
+⑤ npm run lint --fix   <---임시방편
