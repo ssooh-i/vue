@@ -1,0 +1,6 @@
+https://v2.vuejs.org/v2/guide/
+
+한글문서
+https://ssafy-vue.xyz/
+
+https://github.com/vuejs-kr/kr.vuejs.org

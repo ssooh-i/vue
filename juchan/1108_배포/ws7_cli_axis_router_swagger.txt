@@ -1,0 +1,111 @@
+[참고사이트]
+https://www.npmjs.com/  ==> @vue/cli 검색
+===============================================================================
+1. Node.js 설치가 되어 있어야 함(nodejs.org)
+
+2. C:\workspace>vue create vue_ws_07_3_cli_axios_router_swagger   <--- 콘솔, (경로확인할것)
+    Maually select features(선택) -> Router(*) -> 2.x -> (Y/n) Y
+    -> ESLint + Prettier(선택) -> Lint on save(선택)
+    -> (y/N) y -> In dedicated config files  -> Save preset as: mypreset -> enter(또는 N)
+
+3. vue_ws_07_3_cli_axios_router_swagger 폴더에서 VSCode로 열기
+
+4. 작업경로에서 package.json 만들기
+   메뉴 -> Terminal -> new Terminal열고 'v' 표시를 눌러서 command prompt선택(또는 cmd 창)
+   ex) C:\workspace\vue_ws_07_3_cli_axios_router_swagger> npm init (모두 enter)
+
+5. 모듈설치(terminal에서)
+   C:\workspace\vue_ws_07_3_cli_axios_router_swagger> npm i prompt-sync
+
+6. axios 설치(terminal 또는 cmd 창)
+   C:\workspace\vue_ws_07_3_cli_axios_router_swagger> npm install --save axios
+
+7. @vue/cli 설치(terminal에서)
+   ① C:\workspace\vue_ws_07_3_cli_axios_router_swagger> npm install -g @vue/cli
+   ② C:\workspace\vue_ws_07_3_cli_axios_router_swagger> vue -V  (또는 vue --version)
+   ==> C:\Users\jenni\AppData\Roaming\npm\node_modules에 설치됨
+
+8. 실행방법 : 메뉴 -> Terminal -> new Terminal 열고 'v' 표시를 눌러서 command prompt선택
+    C:\workspace\vue_ws_07_3_cli_axios_router_swagger> npm run serve (서버실행)
+    Local: http://localhost:8080/  <--- ctrl + click
+------------------------------------------------------------------------------------
+[Front-End]: VS Code이용해서 아래 구조로 만드시오
+ws7_cli_axis_router_swagger
+   public
+      favicon.ico
+      index.html
+   src
+      css
+        main.css
+      img
+        ssafy_log.png
+      components 
+        book 
+           BookList.js
+           BookModify.js
+           BookView.js
+           HeaderNav.js
+        common
+           Nav.vue
+       router
+           index.js
+
+     App.js
+     index.html      
+
+============================================================================== 
+[Back-End]:  STS의 Spring Boot 이용
+1. WS_VUE_BOOK_API   <--- import
+2. MySQL Workbanch를 열고 book 테이블을 만든다 
+    데이터베이스: ssafyweb
+3. WS_VUE_BOOK_API를 실행한다(서버구동)
+4. 크롬브라우저에서 SwaggerUI를 띄운다
+    http://localhost:9999/vuews/swagger-ui.html
+============================================================================== 
+[prettier 오류 해결 / 방법1]
+① .eslintrc.js에서 추가
+   rules: {
+	"prettier/prettier": ["error", { endOfLine: "auto" }],
+   }
+
+② ctrl + , : print width => 80
+              Tabs size ==> 2
+
+③ 우측하단: CRLF를 눌러 LF로 교체
+ 
+④ 오른쪽 버튼 -> Format Document with... -> prettier
+
+⑤ npm run lint --fix   <---임시방편
+------------------------------------------------------------------------------
+[prettier 오류 해결 / 방법2] https://prettier.io/docs/en/options.html
+"prettier/prettier": [
+      "error",
+      {
+        bracketSameLine: true,
+        singleQuote: false,
+        semi: true,
+        tabWidth: 2,
+        trailingComma: "all",
+        printWidth: 80,
+        bracketSpacing: true,
+        arrowParens: "always",
+        endOfLine: "auto",
+        useTabs: false,
+      },
+------------------------------------------------------------------------------
+[이전 버전에서 사용했던것처럼 AboutView가 아닌 About로 쓸 경우에 오류가 발생함]
+    error메세지
+        - 1:1  error  Component name "About" should always be multi-word  
+
+[해결방법]
+① .eslintrc.js에서 추가
+rules: {
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        ignores: ["About", "Home", "Book", "Navi"],
+      },
+    ],
+}
+=============================================================================
+

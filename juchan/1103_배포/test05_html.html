@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- // HTML 아니고 innerText로 들어간다. (단순 문자열) -->
+      <div>메세지 : {{message}}</div>
+      <!-- // HTML 을 적용하고 싶을 때 -->
+      <div v-html="'메세지 : ' + message"></div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "<h2>Hello Vue~!</h2>", 
+        },
+      });
+    </script>
+  </body>
+</html>

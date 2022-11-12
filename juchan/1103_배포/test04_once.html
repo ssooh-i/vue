@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{ message }}</div>
+      <!-- v-once : 한번만 넣어서 후에 데이터가 바뀌더라도 바뀌지 않게 한다. -->
+      <div v-once>{{ message }}</div> 
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue~!",
+        },
+      });
+    </script>
+  </body>
+</html>

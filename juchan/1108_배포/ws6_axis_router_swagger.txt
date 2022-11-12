@@ -1,0 +1,59 @@
+[Vue Router]
+https://v3.router.vuejs.org/kr/installation.html (Vue Router사이트를 참고해서 학습합시다)
+==================================================================================
+[Back-End]:  STS의 Spring Boot 이용
+
+1. WS_VUE_BOOK_API   <--- 제공된 파일을 import한다
+
+2. MySQL Workbanch를 열고 book 테이블을 만든다 
+    데이터베이스: ssafyweb
+
+3. WS_VUE_BOOK_API를 실행한다(서버구동)
+
+4. 크롬브라우저에서 SwaggerUI를 띄운다
+    http://localhost:9999/vuews/swagger-ui.html
+===================================================================================
+[Front-End]: VS Code이용
+
+5. ws4_component  --> ws6_axis_router_swagger로 복사한 후 코드를 수정한다.
+[원본]
+ws3_component 
+   css
+     main.css
+   img
+      ssafy_log.png
+   components
+      BookCreate.js
+      BookDelete.js
+      BookList.js
+      BookModify.js
+      BookView.js
+      HeaderNav.js
+      MainContents.js
+   create.html
+   delete.html
+   index.html
+   list.html
+   modify.html
+   view.html
+-----------------------------
+[수정본]
+ws6_axis_router_swagger
+   css
+     main.css
+   img
+      ssafy_log.png
+   components
+      BookCreate.js
+      BookDelete.js
+      BookList.js
+      BookModify.js
+      BookView.js
+      HeaderNav.js
+      MainContents.js
+   App.js
+   index.html
+
+6. Open with Live server를 이용해서 index.html을 실행한다
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        참조 주소 
+        https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function
+        async 는 항상 Promise 객체를 반환
+        await가 없다면 항상 동기적 실행
+      */
+      async function func(num) {
+        const a = await new Promise((resolve) => {
+          setTimeout(() => resolve(num), 3000); // resolve의 결과값이 반환됨
+          //return 100;  무시됨
+        });
+        console.log(a);
+
+        const b = await new Promise((resolve) =>
+          setTimeout(() => resolve(a + 1), 2000)
+        );
+        console.log(b);
+
+        const c = await new Promise((resolve) =>
+          setTimeout(() => resolve(b + 1), 1000)
+        );
+        console.log(c);
+      }
+
+      func(10);
+    </script>
+  </body>
+</html>

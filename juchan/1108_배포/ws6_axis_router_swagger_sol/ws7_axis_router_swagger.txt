@@ -1,0 +1,66 @@
+[Vue Router]
+https://v3.router.vuejs.org/kr/installation.html (Vue Router사이트를 참고해서 학습합시다)
+===================================================================================
+[Front-End]: VS Code이용
+1. ws3_component  --> ws4_axis_router_swagger로 복사한 후 코드를 수정한다.
+[원본]
+ws3_component 
+   css
+     main.css
+   img
+      ssafy_log.png
+   components
+      BookCreate.js
+      BookDelete.js
+      BookList.js
+      BookModify.js
+      BookView.js
+      HeaderNav.js
+      MainContents.js
+   create.html
+   delete.html
+   index.html
+   list.html
+   modify.html
+   view.html
+-----------------------------
+[수정본]
+ws6_axis_router
+   css
+     main.css
+   img
+      ssafy_log.png
+   components
+      BookCreate.js
+      BookDelete.js
+      BookList.js
+      BookModify.js
+      BookView.js
+      HeaderNav.js
+      MainContents.js
+   App.js
+   index.html
+
+2. Open with Live server를 이용해서 index.html을 실행한다
+==================================================================================
+[Back-End]:  STS의 Spring Boot 이용해서 swagger를 수행한다
+
+3. WS4_VUE_BOOK_API   <--- 제공된 파일을 import한다
+
+4. MySQL Workbanch를 열고 book 테이블을 만든다 
+    데이터베이스: ssafyshop
+
+5. WS4_VUE_BOOK_API를 실행한다(서버구동)
+
+6. 크롬브라우저에서 SwaggerUI를 띄운다
+    http://localhost:9999/vuews/swagger-ui.html
+==========================================================================
+ mode: "history"의 이해
+  mode의 종류에는 history, hash(기본값)가 있다.
+  hash: url이 변경될때 페이지를 다시 로드하지 않는다
+  history: history.pushState API를 활용해서 페이지를 다시 로드하지 않고도 url탐샏을 할수 있다
+           (url에 #이 포함되지 않기를 원하면 history를 사용)
+  해시모드가 아닌 히스토리모드에서 서버는 이 페이지가 새로운 페이지 인것을 알지 못한다.
+  예를들어, 로그인(링크)을 클릭했을때 url이 이동하더라도 서버는 알지 못한다
+  따라서, 히스토리 모드에서는 적절한 서버 설정없는 단일 페이지(클라이언트)를 사용하기 때문에
+  사용자가 직접 http://test.com/login에 접속하면 404오류가 발생한다

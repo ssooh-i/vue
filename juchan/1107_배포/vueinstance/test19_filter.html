@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-model="msg" />
+    </div>
+    <div>
+      <h2>결과 :</h2>
+      <h3>{{ msg | count1 }}</h3>
+      <h3>{{ msg | count2('문자를 넣어보세요') }}</h3>
+    </div>
+  </div>
+
+  <script>
+    Vue.filter('count1', (val) => { // 전역 필터(global filter) 필터가 쓰일 때 호출되는 콜백함수(val 자리에 해당 msg가 들어간다.)
+      if (val.length == 0) {
+        return;
+      }
+      return `${val} : ${val.length}자`;
+    });
+    new Vue({
+      el: '#app',
+      data: {
+        msg: '',
+      },
+      filters: { // 지역 필터(local filter)
+        count2(val, alternative) { // 콜백 하는 함수의 인자가 첫번째, 임의로 넣은게 두번째에 들어감
+          if (val.length == 0) {
+            return alternative;
+          }
+          return `${val} : ${val.length}자`;
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

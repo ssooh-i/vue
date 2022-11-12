@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const promise = new Promise((resolve, reject) => {
+        console.log('비동기 코드 호출 - promise 객체 생성');
+
+        setTimeout(() => {
+          //resolve('성공');
+          reject('에러');
+        }, 3000);
+      });
+
+      promise
+        .then((data) => {
+          console.log('결과1:' + data);
+        })
+        .catch((data) => {
+          console.log('결과2:' + data);
+        })
+        .finally(() => {
+          console.log('finally 실행');
+        });
+    </script>
+  </body>
+</html>
+<!--
+  executor 함수는 아래의 형태이다.
+  function(resolve, reject) {
+    // 성공시 resolve 함수 실행
+    // 실패시 reject 함수 실행
+  }
+
+  resolve와 reject 모두 콜백함수
+  resolve는 성공시 실행 - then 실행
+  reject는 실패시 실행 - catch 실행
+  -->

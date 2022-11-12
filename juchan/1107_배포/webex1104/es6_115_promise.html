@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const myPromise = {
+      then: function (num) {
+        console.log('자기자신객체 반환 : ', num);
+        return this;
+      },
+    };
+    setTimeout(function () {
+      myPromise.
+        then(2).
+        then(1).
+        then(3);
+    }, 3000);
+  </script>
+</body>
+
+</html>

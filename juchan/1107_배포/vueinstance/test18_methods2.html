@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <script>
+        let vm = new Vue({ // 객체를 받아서
+            data: {
+                count: 1
+            },
+            methods: {
+                incCount() {
+                    console.log("incCount 호출됨");
+                    this.count++
+                }
+            }
+        })
+        vm.incCount(); // 외부에서 사용할 수 있다. (사용할 일이 많지는 않다.)
+        console.log(vm.count); // 2
+    </script>
+</body>
+</html>
+

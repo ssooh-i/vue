@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function axios(url, options, t) {
+        console.log(`${url} ${options.method} 방식으로 호출함`);
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+            reject();
+          }, t);
+        });
+      }
+
+      axios('http://localhost:8000/board', { method: 'get' }, 1000);
+      axios('http://localhost:8000/board/10', { method: 'delete' }, 2000);
+      axios('http://localhost:8000/board', {
+        method: 'post',
+        data: {
+          writer: this.writer,
+          title: this.title,
+          content: this.content,
+        },
+      },1000)
+        .then((data) => {
+          console.log('등록 성공');
+          // return axios('http://localhost:8000/board', { method: 'get' });
+        })
+        .then(() => {
+          console.log('조회 성공');
+          //return axios('http://localhost:8000/board/10', { method: 'delete' });
+        })
+        .then(() => {
+          console.log('삭제 성공');
+        })
+        .catch(() => {
+          console.log('에러발생');
+        });
+    </script>
+  </body>
+</html>
