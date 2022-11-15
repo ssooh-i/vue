@@ -15,3 +15,6 @@ ws3_component
    list.html
    modify.html
    view.html
+
+
+Vue.js : https://v2.vuejs.org

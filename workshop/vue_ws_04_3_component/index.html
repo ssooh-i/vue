@@ -9,18 +9,18 @@
   </head>
   <body>
     <div id="app">
-      <!-- component이름이 HeaderNav를 출력. -->
-      <header-nav></header-nav>
-      <!-- component이름이 MainContent를 출력. -->
-      <main-content></main-content>
+        <!-- component이름이 HeaderNav / component이름이 MainContent을 출력 -->
+        <header-nav></header-nav>
+        <main-content></main-content>
     </div>
+
     <script type="module">
-      import HeaderNav from "./components/HeaderNav.js";
-      import MainContent from "./components/MainContent.js";
+      import HeaderNav from "./components/HeaderNav.js"
+      import MainContent from "./components/MainContents.js"
 
       new Vue({
-        el: "#app",
-        components: {
+        el:"#app",
+        components:{
           HeaderNav,
           MainContent
         }

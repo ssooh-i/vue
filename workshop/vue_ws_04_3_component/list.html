@@ -12,14 +12,15 @@
       <header-nav></header-nav>
       <book-list></book-list>
     </div>
+    
     <script type="module">
       import HeaderNav from "./components/HeaderNav.js";
       import BookList from "./components/BookList.js";
-
+      
       new Vue({
         el: "#app",
         name: "list",
-        components: {
+        components:{
           HeaderNav,
           BookList
         }

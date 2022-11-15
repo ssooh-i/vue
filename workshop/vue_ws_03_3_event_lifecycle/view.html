@@ -10,7 +10,9 @@
   <body>
     <div id="app">
       <div class="header">
-        <a href="index.html"> <img src="./img/ssafy_logo.png" id="ssafy_logo" /></a>
+        <a href="index.html">
+          <img src="./img/ssafy_logo.png" id="ssafy_logo"
+        /></a>
         <p class="logo">도서관리</p>
       </div>
       <div class="regist">
@@ -23,9 +25,9 @@
           <label for="author">저자</label>
           <div class="view">{{book.author}}</div>
           <label for="price">가격</label>
-          <div class="view">{{numberWithCommas(book.price)}}원</div>
+          <div class="view">{{book.price}}원</div>
           <label for="content">설명</label>
-          <div class="view" v-html="enterToBr(book.content)"></div>
+          <div class="view">{{book.content}}</div>
           <div style="padding-top: 15px">
             <a :href="'./modify.html?isbn=' + book.isbn" class="btn">수정</a>
             <a :href="'./delete.html?isbn=' + book.isbn" class="btn">삭제</a>
@@ -40,24 +42,24 @@
         name: "view",
         data: function () {
           return {
-            book: {}
+            book: {},
           };
         },
         created() {
           // url에서 파라미터정보 얻기.
           const params = new URL(document.location).searchParams;
+
           // localStorage에서 booklist로 저장된 도서 목록을 얻어온 후 JSON객체로 parsing한다.
           const booklist = JSON.parse(localStorage.getItem("booklist"));
-          for (let obj of booklist.books) {
-            // 보여줄 isbn을 찾았다면.
-            if (params.get("isbn") == obj.isbn) {
+          for(let obj of booklist.books){
+            if(params.get('isbn') == obj.isbn){
               // 전역변수 book에 화면에 보여줄 객체를 저장.
-              this.book = obj;
+              this.book=obj;
               break;
             }
           }
         },
-        methods: {
+        methods:{
           numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           },
