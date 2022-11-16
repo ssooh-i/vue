@@ -1,0 +1,10 @@
+ex15_jwt  -- Spring Legacy Project --> simple java(Convert to Maven Project)
+   src
+     com.ssafy.vue
+         JWTMain.java
+   
+ 
+
+[참고사이트]
+https://jwt.io/
+https://velopert.com/2389
